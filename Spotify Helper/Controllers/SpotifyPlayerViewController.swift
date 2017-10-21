@@ -10,6 +10,10 @@ import Cocoa
 
 class SpotifyPlayerViewController: NSViewController {
     
+    //todo: pause on hover
+    //todo: fix popover reposition on skip
+    //todo: shuffle / repeat toggle?
+    
     @IBOutlet weak var trackTitle: NSTextField!
     @IBOutlet weak var artistTitle: NSTextField!
     @IBOutlet weak var albumArt: NSImageView!
@@ -23,6 +27,18 @@ class SpotifyPlayerViewController: NSViewController {
     }
     
     override func viewWillAppear() {
+        updateState()
+    }
+    
+    @IBAction func didSelectPrevious(_ sender: Any) {
+        Spotify.previousTrack()
+    }
+    
+    @IBAction func didSelectNext(_ sender: Any) {
+        Spotify.nextTrack()
+    }
+    
+    func updateState() {
         self.current = Spotify.getCurrentlyPlaying()
         setView()
     }
@@ -59,8 +75,7 @@ extension SpotifyPlayerViewController {
 extension SpotifyPlayerViewController: SpotifyEventListenerDelegate {
     
     func playbackStateChanged() {
-        self.current = Spotify.getCurrentlyPlaying()
-        setView()
+        updateState()
     }
     
 }

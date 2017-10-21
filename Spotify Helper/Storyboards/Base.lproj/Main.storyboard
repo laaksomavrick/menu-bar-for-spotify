@@ -686,43 +686,75 @@
             <objects>
                 <viewController storyboardIdentifier="SpotifyPlayerViewController" id="XfG-lQ-9wD" customClass="SpotifyPlayerViewController" customModule="Spotify_Helper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="et6-MD-R61">
-                                <rect key="frame" x="-2" y="50" width="484" height="17"/>
+                                <rect key="frame" x="-2" y="26" width="354" height="19"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" placeholderString="No track playing" id="JBF-WJ-CWl">
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="system" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nv7-UE-wmO">
-                                <rect key="frame" x="-2" y="75" width="484" height="17"/>
+                                <rect key="frame" x="-2" y="53" width="354" height="19"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" placeholderString="No artist selected" id="YIb-hl-NNJ">
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="system" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nG7-GD-jJF">
-                                <rect key="frame" x="165" y="100" width="150" height="150"/>
+                                <rect key="frame" x="100" y="88" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="BbT-Cv-Hu1"/>
                                     <constraint firstAttribute="width" constant="150" id="Vnt-3s-TuL"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="EQE-40-g0P"/>
                             </imageView>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="VB5-pP-vDN">
+                                <rect key="frame" x="26" y="138" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="5T7-nT-9vQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="Cw7-Me-bwO"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSLeftFacingTriangleTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Dd8-gi-3hQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didSelectPrevious:" target="XfG-lQ-9wD" id="mOH-uT-eMX"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="Exi-UU-mDT">
+                                <rect key="frame" x="274" y="138" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ANX-A9-zpy"/>
+                                    <constraint firstAttribute="height" constant="50" id="IAV-YJ-iWp"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRightFacingTriangleTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="8ep-YU-gOj">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didSelectNext:" target="XfG-lQ-9wD" id="yIx-Qn-vRh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="VB5-pP-vDN" firstAttribute="centerY" secondItem="nG7-GD-jJF" secondAttribute="centerY" id="1Kg-RU-nqj"/>
                             <constraint firstItem="et6-MD-R61" firstAttribute="top" secondItem="nv7-UE-wmO" secondAttribute="bottom" constant="8" id="3OG-0s-sKg"/>
                             <constraint firstItem="nG7-GD-jJF" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="4xO-G0-d5j"/>
+                            <constraint firstItem="Exi-UU-mDT" firstAttribute="leading" secondItem="nG7-GD-jJF" secondAttribute="trailing" constant="24" id="9ij-Fb-Bcb"/>
                             <constraint firstAttribute="trailing" secondItem="et6-MD-R61" secondAttribute="trailing" id="Hzi-hD-D9G"/>
-                            <constraint firstItem="nG7-GD-jJF" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="cWb-XF-3OD"/>
+                            <constraint firstItem="Exi-UU-mDT" firstAttribute="top" secondItem="VB5-pP-vDN" secondAttribute="top" id="WUh-Pm-ZsP"/>
+                            <constraint firstItem="nG7-GD-jJF" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="cWb-XF-3OD"/>
                             <constraint firstItem="et6-MD-R61" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="ffj-zN-hxb"/>
-                            <constraint firstItem="nv7-UE-wmO" firstAttribute="top" secondItem="nG7-GD-jJF" secondAttribute="bottom" constant="8" id="jeR-3R-CiU"/>
+                            <constraint firstItem="nv7-UE-wmO" firstAttribute="top" secondItem="nG7-GD-jJF" secondAttribute="bottom" constant="16" id="jeR-3R-CiU"/>
                             <constraint firstItem="nv7-UE-wmO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="lGG-6O-Vcb"/>
                             <constraint firstAttribute="trailing" secondItem="nv7-UE-wmO" secondAttribute="trailing" id="njc-6K-5dk"/>
+                            <constraint firstItem="nG7-GD-jJF" firstAttribute="leading" secondItem="VB5-pP-vDN" secondAttribute="trailing" constant="24" id="qy5-A4-oAP"/>
                         </constraints>
                     </view>
                     <connections>
@@ -736,4 +768,8 @@
             <point key="canvasLocation" x="75" y="467"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSLeftFacingTriangleTemplate" width="9" height="12"/>
+        <image name="NSRightFacingTriangleTemplate" width="9" height="12"/>
+    </resources>
 </document>

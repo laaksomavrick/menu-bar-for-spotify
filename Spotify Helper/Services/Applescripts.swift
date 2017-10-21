@@ -21,5 +21,19 @@ struct AppleScripts {
         end tell
     """
     
+    static let previousTrack =
+    """
+        tell application "Spotify"
+            previous track
+        end tell
+    """
+    
+    static let nextTrack =
+    """
+        tell application "Spotify"
+            next track
+        end tell
+    """
+    
 }
 
