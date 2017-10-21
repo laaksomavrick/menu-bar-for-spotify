@@ -11,30 +11,15 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.variableLength)
+    let view = SpotifyMenuButton()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
-        if let button = statusItem.button {
-            button.title = "hello, world"
-            button.action = #selector(displayMenu(_:))
-        }
-        
+        view.set()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 
-}
-
-extension AppDelegate {
-    
-    @objc func displayMenu(_ sender: Any?) {
-        
-        print("here")
-        
-    }
-    
 }
 

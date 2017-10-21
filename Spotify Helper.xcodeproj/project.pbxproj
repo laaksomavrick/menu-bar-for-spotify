@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		6A533DB01F996CA70014B2CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A533DAF1F996CA70014B2CA /* AppDelegate.swift */; };
-		6A533DB21F996CA70014B2CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A533DB11F996CA70014B2CA /* ViewController.swift */; };
 		6A533DB41F996CA70014B2CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A533DB31F996CA70014B2CA /* Assets.xcassets */; };
 		6A533DB71F996CA70014B2CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A533DB51F996CA70014B2CA /* Main.storyboard */; };
+		6A533DC01F998E6D0014B2CA /* SpotifyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A533DBF1F998E6D0014B2CA /* SpotifyPlayerViewController.swift */; };
+		6A533DC21F9BAE870014B2CA /* SpotifyMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A533DC11F9BAE870014B2CA /* SpotifyMenuButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6A533DAC1F996CA70014B2CA /* Spotify Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spotify Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A533DAF1F996CA70014B2CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6A533DB11F996CA70014B2CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6A533DB31F996CA70014B2CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A533DB61F996CA70014B2CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6A533DB81F996CA70014B2CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A533DB91F996CA70014B2CA /* Spotify_Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spotify_Helper.entitlements; sourceTree = "<group>"; };
+		6A533DBF1F998E6D0014B2CA /* SpotifyPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyPlayerViewController.swift; sourceTree = "<group>"; };
+		6A533DC11F9BAE870014B2CA /* SpotifyMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyMenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +56,12 @@
 			isa = PBXGroup;
 			children = (
 				6A533DAF1F996CA70014B2CA /* AppDelegate.swift */,
-				6A533DB11F996CA70014B2CA /* ViewController.swift */,
 				6A533DB31F996CA70014B2CA /* Assets.xcassets */,
 				6A533DB51F996CA70014B2CA /* Main.storyboard */,
+				6A533DBF1F998E6D0014B2CA /* SpotifyPlayerViewController.swift */,
 				6A533DB81F996CA70014B2CA /* Info.plist */,
 				6A533DB91F996CA70014B2CA /* Spotify_Helper.entitlements */,
+				6A533DC11F9BAE870014B2CA /* SpotifyMenuButton.swift */,
 			);
 			path = "Spotify Helper";
 			sourceTree = "<group>";
@@ -134,7 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A533DB21F996CA70014B2CA /* ViewController.swift in Sources */,
+				6A533DC21F9BAE870014B2CA /* SpotifyMenuButton.swift in Sources */,
+				6A533DC01F998E6D0014B2CA /* SpotifyPlayerViewController.swift in Sources */,
 				6A533DB01F996CA70014B2CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
