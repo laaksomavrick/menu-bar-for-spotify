@@ -3,7 +3,7 @@
 //  Spotify Helper
 //
 //  Created by Mavrick Laakso on 2017-10-21.
-//  Copyright © 2017 Lucid Development. All rights reserved.
+//  Copyright © Mavrick Laakso. All rights reserved.
 //
 
 import Cocoa

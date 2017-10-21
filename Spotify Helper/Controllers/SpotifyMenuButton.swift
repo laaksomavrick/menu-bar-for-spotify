@@ -3,7 +3,7 @@
 //  Spotify Helper
 //
 //  Created by Mavrick Laakso on 2017-10-21.
-//  Copyright © 2017 Lucid Development. All rights reserved.
+//  Copyright © Mavrick Laakso. All rights reserved.
 //
 
 import Cocoa
@@ -26,7 +26,7 @@ extension SpotifyMenuButton {
     
     func setTitle() {
         if let button = statusItem.button {
-            button.title = "hi alex"
+            button.title = "test"
             button.action = #selector(self.togglePopover(_:))
             button.target = self
         }
@@ -62,6 +62,10 @@ extension SpotifyMenuButton {
         if let button = statusItem.button {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
             eventListener?.start()
+            
+            print("here")
+            Spotify.conn.currentlyPlaying()
+            
         }
     }
     
