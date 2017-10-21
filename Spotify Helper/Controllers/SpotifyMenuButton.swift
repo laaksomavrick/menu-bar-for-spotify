@@ -6,12 +6,12 @@
 //  Copyright © 2017 Lucid Development. All rights reserved.
 //
 
-import Foundation
 import Cocoa
 
 class SpotifyMenuButton {
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.variableLength)
     let popover = NSPopover()
+    var eventListener: EventListener?
 }
 
 extension SpotifyMenuButton {
@@ -21,11 +21,12 @@ extension SpotifyMenuButton {
     func set() {
         setTitle()
         setPopover()
+        setEventListener()
     }
     
     func setTitle() {
         if let button = statusItem.button {
-            button.title = "hi bb"
+            button.title = "hi alex"
             button.action = #selector(self.togglePopover(_:))
             button.target = self
         }
@@ -33,6 +34,14 @@ extension SpotifyMenuButton {
     
     func setPopover() {
         popover.contentViewController = SpotifyPlayerViewController.freshController()
+    }
+    
+    func setEventListener() {
+        eventListener = EventListener(mask : [.leftMouseDown, .rightMouseDown]) { [weak self] event in
+            if let this = self, this.popover.isShown {
+                this.closePopover(sender: event)
+            }
+        }
     }
     
 }
@@ -52,11 +61,13 @@ extension SpotifyMenuButton {
     func showPopover(sender: Any?) {
         if let button = statusItem.button {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+            eventListener?.start()
         }
     }
     
     func closePopover(sender: Any?) {
         popover.performClose(sender)
+        eventListener?.stop()
     }
     
 }
