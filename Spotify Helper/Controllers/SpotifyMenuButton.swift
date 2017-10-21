@@ -11,7 +11,11 @@ import Cocoa
 class SpotifyMenuButton {
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.variableLength)
     let popover = NSPopover()
-    var eventListener: EventListener?
+    var userInterfaceEventListener: UserInterfaceEventListener?
+    let spotifyEventListener = SpotifyEventListener()
+    
+    let defaultText = "No track playing"
+    
 }
 
 extension SpotifyMenuButton {
@@ -19,16 +23,23 @@ extension SpotifyMenuButton {
     //MARK: - view initialization related functions (data bindings / view init)
     
     func set() {
-        setTitle()
+        setButton()
         setPopover()
-        setEventListener()
+        setUserInterfaceEventListener()
+        setSpotifyEventListener()
+    }
+    
+    func setButton() {
+        if let button = statusItem.button {
+            setTitle()
+            button.action = #selector(self.togglePopover(_:))
+            button.target = self
+        }
     }
     
     func setTitle() {
         if let button = statusItem.button {
-            button.title = "test"
-            button.action = #selector(self.togglePopover(_:))
-            button.target = self
+            button.title = Spotify.getCurrentlyPlaying() ?? defaultText
         }
     }
     
@@ -36,12 +47,24 @@ extension SpotifyMenuButton {
         popover.contentViewController = SpotifyPlayerViewController.freshController()
     }
     
-    func setEventListener() {
-        eventListener = EventListener(mask : [.leftMouseDown, .rightMouseDown]) { [weak self] event in
+    func setUserInterfaceEventListener() {
+        userInterfaceEventListener = UserInterfaceEventListener(mask : [.leftMouseDown, .rightMouseDown]) { [weak self] event in
             if let this = self, this.popover.isShown {
                 this.closePopover(sender: event)
             }
         }
+    }
+    
+    func setSpotifyEventListener() {
+        spotifyEventListener.delegate = self
+    }
+    
+}
+
+extension SpotifyMenuButton: SpotifyEventListenerDelegate {
+    
+    func playbackStateChanged() {
+        setTitle()
     }
     
 }
@@ -61,17 +84,13 @@ extension SpotifyMenuButton {
     func showPopover(sender: Any?) {
         if let button = statusItem.button {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
-            eventListener?.start()
-            
-            print("here")
-            Spotify.getCurrentlyPlaying()
-            
+            userInterfaceEventListener?.start()
         }
     }
     
     func closePopover(sender: Any?) {
         popover.performClose(sender)
-        eventListener?.stop()
+        userInterfaceEventListener?.stop()
     }
     
 }

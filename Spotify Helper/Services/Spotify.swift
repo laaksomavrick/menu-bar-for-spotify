@@ -18,11 +18,12 @@ extension Spotify {
         
     }
     
-    static func getCurrentlyPlaying() {
-        execute(AppleScripts.currentlyPlaying)
+    static func getCurrentlyPlaying() -> String? {
+        let current = execute(AppleScripts.currentlyPlaying)
+        return current
     }
     
-    static private func execute(_ script: String) {
+    static private func execute(_ script: String) -> String? {
         var error: NSDictionary?
         if let scriptObject = NSAppleScript(source: script) {
             let output = scriptObject.executeAndReturnError(&error)
@@ -30,10 +31,12 @@ extension Spotify {
                 print("Error executing apple script")
                 print(error as Any)
                 print(output)
+                return nil
             } else {
-                print(output)
+                return output.stringValue
             }
         }
+        return nil
     }
     
 }

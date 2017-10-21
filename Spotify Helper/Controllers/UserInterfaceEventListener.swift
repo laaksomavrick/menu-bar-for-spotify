@@ -8,8 +8,8 @@
 
 import Cocoa
 
-public class EventListener {
-    private var monitor: Any?
+public class UserInterfaceEventListener {
+    private var listener: Any?
     private let mask: NSEvent.EventTypeMask
     private let handler: (NSEvent?) -> Void
     
@@ -23,13 +23,13 @@ public class EventListener {
     }
     
     public func start() {
-        monitor = NSEvent.addGlobalMonitorForEvents(matching: mask, handler: handler)
+        listener = NSEvent.addGlobalMonitorForEvents(matching: mask, handler: handler)
     }
     
     public func stop() {
-        if monitor != nil {
-            NSEvent.removeMonitor(monitor!)
-            monitor = nil
+        if listener != nil {
+            NSEvent.removeMonitor(listener!)
+            listener = nil
         }
     }
 }
