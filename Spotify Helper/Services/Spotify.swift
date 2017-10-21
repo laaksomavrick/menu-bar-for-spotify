@@ -3,7 +3,7 @@
 //  Spotify Helper
 //
 //  Created by Mavrick Laakso on 2017-10-21.
-//  Copyright © Mavrick Laakso. All rights reserved.
+//  Copyright © 2017 Mavrick Laakso. All rights reserved.
 //
 // This is an wrapper for the application to talk to Spotify's desktop client
 
@@ -17,7 +17,7 @@ class Spotify {
 extension Spotify {
     
     func isRunning() {
-        
+        //todo
     }
     
     static func getCurrentlyPlaying() -> SongData {
@@ -47,42 +47,4 @@ extension Spotify {
     
 }
 
-struct SongData {
-    
-    public let artist: String?
-    public let track: String?
-    public let albumUrl: String?
-    public let albumImage: NSImage?
-    
-    init(_ input: String) {
-        let split = input.characters.split(separator: "$").map(String.init)
-        self.artist = split[0]
-        self.track = split[1]
-        self.albumUrl = split[2]
-        self.albumImage = nil
-    }
-    
-    init() {
-        self.artist = "No artist playing"
-        self.track = "No track playing"
-        self.albumUrl = nil
-        self.albumImage = nil
-    }
-    
-    func getTrack() -> String? {
-        guard let track = self.track else { return nil }
-        return track
-    }
-    
-    func getArtist() -> String? {
-        guard let artist = self.artist else { return nil }
-        return artist
-    }
-    
-    func getArtistAndTrack() -> String? {
-        guard let artist = self.getArtist() else { return "Nothing playing" }
-        guard let track = self.getTrack() else { return "Nothing playing" }
-        return "\(artist) - \(track)"
-    }
-    
-}
+

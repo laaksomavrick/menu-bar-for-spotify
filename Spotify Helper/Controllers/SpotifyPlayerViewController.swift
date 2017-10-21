@@ -3,7 +3,7 @@
 //  Spotify Helper
 //
 //  Created by Mavrick Laakso on 2017-10-19.
-//  Copyright © Mavrick Laakso. All rights reserved.
+//  Copyright © 2017 Mavrick Laakso. All rights reserved.
 //
 
 import Cocoa
@@ -48,8 +48,10 @@ extension SpotifyPlayerViewController {
     }
     
     func setAlbumArt() {
-        albumArt.wantsLayer = true
-        albumArt.layer?.backgroundColor = NSColor.red.cgColor
+        current?.getAlbumImage() { error, image in
+            guard let image = image else { return }
+            self.albumArt.image = image
+        }
     }
     
 }
@@ -57,6 +59,7 @@ extension SpotifyPlayerViewController {
 extension SpotifyPlayerViewController: SpotifyEventListenerDelegate {
     
     func playbackStateChanged() {
+        self.current = Spotify.getCurrentlyPlaying()
         setView()
     }
     
