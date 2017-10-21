@@ -11,11 +11,10 @@ import Cocoa
 class SpotifyMenuButton {
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.variableLength)
     let popover = NSPopover()
+    
     var userInterfaceEventListener: UserInterfaceEventListener?
     let spotifyEventListener = SpotifyEventListener()
-    
-    let defaultText = "No track playing"
-    
+    var current: SongData?
 }
 
 extension SpotifyMenuButton {
@@ -23,6 +22,7 @@ extension SpotifyMenuButton {
     //MARK: - view initialization related functions (data bindings / view init)
     
     func set() {
+        self.current = Spotify.getCurrentlyPlaying()
         setButton()
         setPopover()
         setUserInterfaceEventListener()
@@ -38,8 +38,8 @@ extension SpotifyMenuButton {
     }
     
     func setTitle() {
-        if let button = statusItem.button {
-            button.title = Spotify.getCurrentlyPlaying() ?? defaultText
+        if let button = statusItem.button, let header = current?.getArtistAndTrack() {
+            button.title = header
         }
     }
     
@@ -64,6 +64,7 @@ extension SpotifyMenuButton {
 extension SpotifyMenuButton: SpotifyEventListenerDelegate {
     
     func playbackStateChanged() {
+        self.current = Spotify.getCurrentlyPlaying()
         setTitle()
     }
     

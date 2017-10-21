@@ -690,8 +690,24 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="et6-MD-R61">
-                                <rect key="frame" x="233" y="126" width="15" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="hi" id="JBF-WJ-CWl">
+                                <rect key="frame" x="-2" y="28" width="484" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" placeholderString="No track playing" id="JBF-WJ-CWl">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nG7-GD-jJF">
+                                <rect key="frame" x="190" y="85" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="4Yo-iS-d0G"/>
+                                    <constraint firstAttribute="width" constant="100" id="X0i-yg-1fz"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="EQE-40-g0P"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nv7-UE-wmO">
+                                <rect key="frame" x="-2" y="53" width="484" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" placeholderString="No artist selected" id="YIb-hl-NNJ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -699,10 +715,21 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="et6-MD-R61" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="UFb-gu-omT"/>
-                            <constraint firstItem="et6-MD-R61" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="pN8-V6-yh1"/>
+                            <constraint firstAttribute="trailing" secondItem="nv7-UE-wmO" secondAttribute="trailing" id="Af8-vv-MIv"/>
+                            <constraint firstItem="nG7-GD-jJF" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="FDa-MG-C4c"/>
+                            <constraint firstItem="nv7-UE-wmO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="JEA-yl-8MI"/>
+                            <constraint firstItem="nG7-GD-jJF" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="a6R-xf-C2s"/>
+                            <constraint firstItem="et6-MD-R61" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="iuy-Da-MT5"/>
+                            <constraint firstItem="et6-MD-R61" firstAttribute="top" secondItem="nv7-UE-wmO" secondAttribute="bottom" constant="8" id="l7O-E7-cTj"/>
+                            <constraint firstItem="nv7-UE-wmO" firstAttribute="top" secondItem="nG7-GD-jJF" secondAttribute="bottom" constant="15" id="oWR-9V-Xzx"/>
+                            <constraint firstAttribute="trailing" secondItem="et6-MD-R61" secondAttribute="trailing" id="vZd-fp-Xek"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="albumArt" destination="nG7-GD-jJF" id="286-fn-cPf"/>
+                        <outlet property="artistTitle" destination="nv7-UE-wmO" id="Eqe-0C-9OO"/>
+                        <outlet property="trackTitle" destination="et6-MD-R61" id="SQy-dH-uZ1"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

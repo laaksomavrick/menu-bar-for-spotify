@@ -103,8 +103,6 @@
 			children = (
 				6A533DBF1F998E6D0014B2CA /* SpotifyPlayerViewController.swift */,
 				6A533DC11F9BAE870014B2CA /* SpotifyMenuButton.swift */,
-				6A533DC81F9BB7A10014B2CA /* UserInterfaceEventListener.swift */,
-				6AFFF78A1F9BD7C90098A844 /* SpotifyEventListener.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -112,6 +110,8 @@
 		6A533DC71F9BB74C0014B2CA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6A533DC81F9BB7A10014B2CA /* UserInterfaceEventListener.swift */,
+				6AFFF78A1F9BD7C90098A844 /* SpotifyEventListener.swift */,
 				6A533DCA1F9BBBDC0014B2CA /* Spotify.swift */,
 				6AFFF7871F9BC7750098A844 /* Applescripts.swift */,
 			);
