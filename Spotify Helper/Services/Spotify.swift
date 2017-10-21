@@ -9,34 +9,31 @@
 import Foundation
 
 class Spotify {
-    
-    static let conn = Spotify()
-    
     private init(){}
-    
 }
 
 extension Spotify {
     
-    func currentlyPlaying() {
+    func isRunning() {
         
-        let myAppleScript = """
-        
-        tell application "Spotify"
-          play track "spotify:track:51pQ7vY7WXzxskwloaeqyj"
-        end tell
-        
-        """
+    }
+    
+    static func getCurrentlyPlaying() {
+        execute(AppleScripts.currentlyPlaying)
+    }
+    
+    static private func execute(_ script: String) {
         var error: NSDictionary?
-        if let scriptObject = NSAppleScript(source: myAppleScript) {
-            if let output: NSAppleEventDescriptor = scriptObject.executeAndReturnError(
-                &error) {
-                print(output.stringValue)
-            } else if (error != nil) {
-                print("error: \(error)")
+        if let scriptObject = NSAppleScript(source: script) {
+            let output = scriptObject.executeAndReturnError(&error)
+            if error != nil {
+                print("Error executing apple script")
+                print(error as Any)
+                print(output)
+            } else {
+                print(output)
             }
         }
-        
     }
     
 }

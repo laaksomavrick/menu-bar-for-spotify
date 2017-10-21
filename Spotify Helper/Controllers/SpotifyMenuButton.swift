@@ -64,7 +64,7 @@ extension SpotifyMenuButton {
             eventListener?.start()
             
             print("here")
-            Spotify.conn.currentlyPlaying()
+            Spotify.getCurrentlyPlaying()
             
         }
     }
