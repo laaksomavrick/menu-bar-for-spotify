@@ -10,7 +10,7 @@ import Cocoa
 
 class SpotifyMenuButton {
     
-    let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.variableLength)
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let popover = NSPopover()
     
     var userInterfaceEventListener: UserInterfaceEventListener?

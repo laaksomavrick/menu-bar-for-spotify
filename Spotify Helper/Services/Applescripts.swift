@@ -35,5 +35,31 @@ struct AppleScripts {
         end tell
     """
     
+    static let isRunning =
+    """
+        tell application "System Events"
+            set ids to bundle identifier of every application process
+            if ids contains "com.spotify.client" then
+                return true
+            else
+                return false
+            end if
+        end tell
+    """
+    
+    static let playerState =
+    """
+        tell application "Spotify"
+            return player state as string
+        end tell
+    """
+    
+    static let togglePlayerState =
+    """
+        tell application "Spotify"
+            playpause
+        end tell
+    """
+    
 }
 

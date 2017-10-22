@@ -17,9 +17,9 @@ struct SongData {
     
     init(_ input: String) {
         let split = input.characters.split(separator: "$").map(String.init)
-        self.artist = split[0]
-        self.track = split[1]
-        self.albumUrl = split[2]
+        self.artist = split[safe: 0]
+        self.track = split[safe: 1]
+        self.albumUrl = split[safe: 2]
     }
     
     init() {
@@ -41,7 +41,17 @@ struct SongData {
     func getArtistAndTrack() -> String? {
         guard let artist = self.getArtist() else { return "Nothing playing" }
         guard let track = self.getTrack() else { return "Nothing playing" }
-        return "\(artist) - \(track)"
+        let header = "\(artist) - \(track)"
+        
+        if header.characters.count > 30 {
+            let difference = 30 - header.characters.count
+            let endIndex = header.index(header.endIndex, offsetBy: difference)
+            let truncated = header.substring(to: endIndex)
+            return "\(truncated)..."
+        } else {
+            return header
+        }
+        
     }
     
     public func getAlbumImage(completion: @escaping (_ error: Bool, _ image: NSImage?) -> ()) {

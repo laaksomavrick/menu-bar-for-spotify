@@ -690,7 +690,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="et6-MD-R61">
-                                <rect key="frame" x="-2" y="26" width="354" height="19"/>
+                                <rect key="frame" x="-2" y="17" width="354" height="19"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" placeholderString="No track playing" id="JBF-WJ-CWl">
                                     <font key="font" metaFont="system" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -698,7 +698,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nv7-UE-wmO">
-                                <rect key="frame" x="-2" y="53" width="354" height="19"/>
+                                <rect key="frame" x="-2" y="44" width="354" height="19"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" placeholderString="No artist selected" id="YIb-hl-NNJ">
                                     <font key="font" metaFont="system" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -706,7 +706,7 @@
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nG7-GD-jJF">
-                                <rect key="frame" x="100" y="88" width="150" height="150"/>
+                                <rect key="frame" x="100" y="79" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="BbT-Cv-Hu1"/>
                                     <constraint firstAttribute="width" constant="150" id="Vnt-3s-TuL"/>
@@ -714,7 +714,7 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="EQE-40-g0P"/>
                             </imageView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="VB5-pP-vDN">
-                                <rect key="frame" x="26" y="138" width="50" height="50"/>
+                                <rect key="frame" x="26" y="129" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="5T7-nT-9vQ"/>
                                     <constraint firstAttribute="height" constant="50" id="Cw7-Me-bwO"/>
@@ -728,7 +728,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="Exi-UU-mDT">
-                                <rect key="frame" x="274" y="138" width="50" height="50"/>
+                                <rect key="frame" x="274" y="129" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="ANX-A9-zpy"/>
                                     <constraint firstAttribute="height" constant="50" id="IAV-YJ-iWp"/>
@@ -741,18 +741,29 @@
                                     <action selector="didSelectNext:" target="XfG-lQ-9wD" id="yIx-Qn-vRh"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pUH-uG-dgj">
+                                <rect key="frame" x="-2" y="241" width="354" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" placeholderString="Error" id="ehm-Qd-zXy">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="VB5-pP-vDN" firstAttribute="centerY" secondItem="nG7-GD-jJF" secondAttribute="centerY" id="1Kg-RU-nqj"/>
+                            <constraint firstItem="nG7-GD-jJF" firstAttribute="top" secondItem="pUH-uG-dgj" secondAttribute="bottom" constant="12" id="1uE-ay-iek"/>
                             <constraint firstItem="et6-MD-R61" firstAttribute="top" secondItem="nv7-UE-wmO" secondAttribute="bottom" constant="8" id="3OG-0s-sKg"/>
                             <constraint firstItem="nG7-GD-jJF" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="4xO-G0-d5j"/>
                             <constraint firstItem="Exi-UU-mDT" firstAttribute="leading" secondItem="nG7-GD-jJF" secondAttribute="trailing" constant="24" id="9ij-Fb-Bcb"/>
+                            <constraint firstItem="pUH-uG-dgj" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="As5-jR-56l"/>
                             <constraint firstAttribute="trailing" secondItem="et6-MD-R61" secondAttribute="trailing" id="Hzi-hD-D9G"/>
+                            <constraint firstItem="pUH-uG-dgj" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="JSE-Ui-zIq"/>
                             <constraint firstItem="Exi-UU-mDT" firstAttribute="top" secondItem="VB5-pP-vDN" secondAttribute="top" id="WUh-Pm-ZsP"/>
-                            <constraint firstItem="nG7-GD-jJF" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="cWb-XF-3OD"/>
                             <constraint firstItem="et6-MD-R61" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="ffj-zN-hxb"/>
                             <constraint firstItem="nv7-UE-wmO" firstAttribute="top" secondItem="nG7-GD-jJF" secondAttribute="bottom" constant="16" id="jeR-3R-CiU"/>
                             <constraint firstItem="nv7-UE-wmO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="lGG-6O-Vcb"/>
+                            <constraint firstAttribute="trailing" secondItem="pUH-uG-dgj" secondAttribute="trailing" id="lYq-w4-I4j"/>
                             <constraint firstAttribute="trailing" secondItem="nv7-UE-wmO" secondAttribute="trailing" id="njc-6K-5dk"/>
                             <constraint firstItem="nG7-GD-jJF" firstAttribute="leading" secondItem="VB5-pP-vDN" secondAttribute="trailing" constant="24" id="qy5-A4-oAP"/>
                         </constraints>
@@ -760,6 +771,7 @@
                     <connections>
                         <outlet property="albumArt" destination="nG7-GD-jJF" id="286-fn-cPf"/>
                         <outlet property="artistTitle" destination="nv7-UE-wmO" id="Eqe-0C-9OO"/>
+                        <outlet property="toggleText" destination="pUH-uG-dgj" id="ke8-v1-hcl"/>
                         <outlet property="trackTitle" destination="et6-MD-R61" id="SQy-dH-uZ1"/>
                     </connections>
                 </viewController>

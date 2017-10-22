@@ -18,6 +18,8 @@
 		6AFFF78B1F9BD7C90098A844 /* SpotifyEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFF78A1F9BD7C90098A844 /* SpotifyEventListener.swift */; };
 		6AFFF78E1F9BF5880098A844 /* SongData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFF78D1F9BF5880098A844 /* SongData.swift */; };
 		6AFFF7901F9BF6420098A844 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFF78F1F9BF6420098A844 /* Network.swift */; };
+		6AFFF7961F9D11ED0098A844 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFF7951F9D11ED0098A844 /* CollectionExtension.swift */; };
+		6AFFF7981F9D152D0098A844 /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFF7971F9D152D0098A844 /* PlayerState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		6AFFF78A1F9BD7C90098A844 /* SpotifyEventListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyEventListener.swift; sourceTree = "<group>"; };
 		6AFFF78D1F9BF5880098A844 /* SongData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongData.swift; sourceTree = "<group>"; };
 		6AFFF78F1F9BF6420098A844 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		6AFFF7951F9D11ED0098A844 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
+		6AFFF7971F9D152D0098A844 /* PlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 				6A533DC41F9BB71C0014B2CA /* Assets */,
 				6A533DC51F9BB7270014B2CA /* Config */,
 				6A533DC61F9BB7400014B2CA /* Controllers */,
+				6AFFF7911F9C6C280098A844 /* Extensions */,
 				6AFFF78C1F9BF56F0098A844 /* Models */,
 				6A533DC71F9BB74C0014B2CA /* Services */,
 				6A533DC31F9BB70A0014B2CA /* Storyboards */,
@@ -128,8 +133,17 @@
 			isa = PBXGroup;
 			children = (
 				6AFFF78D1F9BF5880098A844 /* SongData.swift */,
+				6AFFF7971F9D152D0098A844 /* PlayerState.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6AFFF7911F9C6C280098A844 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6AFFF7951F9D11ED0098A844 /* CollectionExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,7 +232,9 @@
 				6AFFF78B1F9BD7C90098A844 /* SpotifyEventListener.swift in Sources */,
 				6AFFF7901F9BF6420098A844 /* Network.swift in Sources */,
 				6AFFF7881F9BC7750098A844 /* Applescripts.swift in Sources */,
+				6AFFF7961F9D11ED0098A844 /* CollectionExtension.swift in Sources */,
 				6A533DB01F996CA70014B2CA /* AppDelegate.swift in Sources */,
+				6AFFF7981F9D152D0098A844 /* PlayerState.swift in Sources */,
 				6A533DC91F9BB7A10014B2CA /* UserInterfaceEventListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
