@@ -4,15 +4,13 @@
 //
 //  Created by Mavrick Laakso on 2017-10-19.
 //  Copyright © 2017 Mavrick Laakso. All rights reserved.
-//nsst
+//
+//  View controller for the popover - handles data bindings, asking for new state, and reacting to user events
 
 import Cocoa
 
 class SpotifyPlayerViewController: NSViewController {
-    
-    //todo: pause on hover
-    //todo: shuffle / repeat toggle?
-    
+
     @IBOutlet weak var trackTitle: NSTextField!
     @IBOutlet weak var artistTitle: NSTextField!
     @IBOutlet weak var albumArt: NSImageView!
@@ -41,7 +39,6 @@ class SpotifyPlayerViewController: NSViewController {
         Spotify.nextTrack()
     }
 
-    
     func addMouseOverListener() {
         let area = NSTrackingArea.init(rect: albumArt.bounds, options: [NSTrackingArea.Options.mouseEnteredAndExited, NSTrackingArea.Options.activeAlways], owner: self, userInfo: nil)
         albumArt.addTrackingArea(area)
@@ -64,7 +61,6 @@ class SpotifyPlayerViewController: NSViewController {
         }
     }
 
-    
 }
 
 extension SpotifyPlayerViewController {
@@ -109,19 +105,15 @@ extension SpotifyPlayerViewController {
     }
     
     func handleMouseEnterAlbumArt() {
-        
         setToggleText()
-        
         NSAnimationContext.runAnimationGroup({(_ context: NSAnimationContext) -> Void in
             context.duration = 0.2
             self.albumArt.animator().alphaValue = 0.5
             self.toggleText.animator().alphaValue = 1.0
         }, completionHandler: nil)
-        
     }
     
     func handleMouseLeftAlbumArt() {
-        
         NSAnimationContext.runAnimationGroup({(_ context: NSAnimationContext) -> Void in
             context.duration = 0.2
             self.albumArt.animator().alphaValue = 1.0

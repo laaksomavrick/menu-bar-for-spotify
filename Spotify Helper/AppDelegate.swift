@@ -5,6 +5,7 @@
 //  Created by Mavrick Laakso on 2017-10-19.
 //  Copyright © 2017 Mavrick Laakso. All rights reserved.
 //
+//  Application entry point
 
 import Cocoa
 
