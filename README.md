@@ -1,4 +1,4 @@
-# spotify-menu-bar
+# menu-bar-for-spotify
 An application interfacing with Spotify's Desktop Client to display the currently playing track on the menu bar and provide a popover interface for playback controls
 
 Menu Bar:  
