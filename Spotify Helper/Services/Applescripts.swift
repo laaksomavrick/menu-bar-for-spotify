@@ -5,7 +5,7 @@
 //  Created by Mavrick Laakso on 2017-10-21.
 //  Copyright © 2017 Mavrick Laakso. All rights reserved.
 //
-// The script constants that are executed to get / set Spotify's state
+//  Applescript constants that are executed to get / set Spotify's state
 
 import Foundation
 

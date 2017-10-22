@@ -5,7 +5,7 @@
 //  Created by Mavrick Laakso on 2017-10-21.
 //  Copyright © 2017 Mavrick Laakso. All rights reserved.
 //
-// This is an wrapper for the application to talk to Spotify's desktop client
+//  Wwrapper for the application to talk to (get/set) Spotify's desktop client
 
 import Foundation
 import Cocoa
@@ -37,9 +37,7 @@ extension Spotify {
     }
     
     static func getCurrentlyPlaying() -> SongData {
-        
         guard isRunning() == true else { return SongData() }
-        
         if let current = executeSongData(AppleScripts.currentlyPlaying) {
             return current
         } else {

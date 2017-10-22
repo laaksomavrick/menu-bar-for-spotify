@@ -5,6 +5,7 @@
 //  Created by Mavrick Laakso on 2017-10-22.
 //  Copyright © 2017 Mavrick Laakso. All rights reserved.
 //
+//  Data structure representing the player's state
 
 import Foundation
 

@@ -5,6 +5,7 @@
 //  Created by Mavrick Laakso on 2017-10-21.
 //  Copyright © 2017 Mavrick Laakso. All rights reserved.
 //
+//  View controller for the menu bar - handles data bindings, asking for new state, and reacting to user events
 
 import Cocoa
 

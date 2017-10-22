@@ -5,6 +5,7 @@
 //  Created by Mavrick Laakso on 2017-10-21.
 //  Copyright © 2017 Mavrick Laakso. All rights reserved.
 //
+//  Monitors playback changes in app / spotify client and notifies listeners via delegate
 
 import Foundation
 import Cocoa

@@ -5,6 +5,7 @@
 //  Created by Mavrick Laakso on 2017-10-21.
 //  Copyright © 2017 Lucid Development. All rights reserved.
 //
+//  Networking class for getting the album image from the album url
 
 import Foundation
 

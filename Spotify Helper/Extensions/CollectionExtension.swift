@@ -5,6 +5,7 @@
 //  Created by Mavrick Laakso on 2017-10-22.
 //  Copyright © 2017 Mavrick Laakso. All rights reserved.
 //
+//  Convenience collections functions - i wanted safe array access
 
 import Foundation
 
