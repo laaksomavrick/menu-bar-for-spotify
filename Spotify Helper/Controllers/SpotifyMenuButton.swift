@@ -67,6 +67,10 @@ extension SpotifyMenuButton {
         spotifyEventListener.delegate = self
     }
     
+    func exit() {
+        Darwin.exit(0)
+    }
+    
 }
 
 extension SpotifyMenuButton: SpotifyEventListenerDelegate {

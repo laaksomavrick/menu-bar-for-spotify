@@ -19,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        exit(0)
+        view.exit()
     }
 
 }

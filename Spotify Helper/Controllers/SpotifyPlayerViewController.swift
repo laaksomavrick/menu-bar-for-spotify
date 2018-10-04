@@ -135,9 +135,9 @@ extension SpotifyPlayerViewController: SpotifyEventListenerDelegate {
 extension SpotifyPlayerViewController {
     
     static func freshController() -> SpotifyPlayerViewController {
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
         let identifier = "SpotifyPlayerViewController"
-        guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? SpotifyPlayerViewController else {
+        guard let viewcontroller = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: identifier)) as? SpotifyPlayerViewController else {
             fatalError("Why cant i find SpotifyPlayerViewController? - Check Main.storyboard")
         }
         return viewcontroller
