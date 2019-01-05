@@ -10,6 +10,7 @@
 import Foundation
 import Cocoa
 
+// dt: structs are data types (stack; immutable); classes are value types (heap; like const in js)
 struct SongData {
     
     public let artist: String?
