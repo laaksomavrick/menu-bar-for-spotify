@@ -15,6 +15,7 @@ public class SpotifyEventListener {
     private var listener: DistributedNotificationCenter?
     private let playbackChanged = NSNotification.Name(rawValue: "com.spotify.client.PlaybackStateChanged")
     
+    // dt: delegates
     var delegate: SpotifyEventListenerDelegate?
     
     public init() {
@@ -31,6 +32,8 @@ extension SpotifyEventListener {
     
     public func start() {
         listener = DistributedNotificationCenter.default()
+        // cr: handle failure case
+        // dt: safe access
         listener?.addObserver(self,
                               selector: #selector(playbackStateChanged),
                               name: playbackChanged,
@@ -45,11 +48,13 @@ extension SpotifyEventListener {
     }
     
     @objc public func playbackStateChanged(notification: NSNotification) {
+        // cr: throw on failure
         delegate?.playbackStateChanged()
     }
     
 }
 
+// dt: delegates / protocols (advanced interfaces / abstract interfaces)
 protocol SpotifyEventListenerDelegate {
     func playbackStateChanged()
 }

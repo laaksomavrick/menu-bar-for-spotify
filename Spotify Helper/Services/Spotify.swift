@@ -46,6 +46,7 @@ extension Spotify {
     }
     
     static private func executeSongData(_ script: String) -> SongData? {
+        // cr: so much copy paste; can just simplify by having this as a function which takes a function
         var error: NSDictionary?
         if let scriptObject = NSAppleScript(source: script) {
             let output = scriptObject.executeAndReturnError(&error)

@@ -7,6 +7,8 @@
 //
 //  Application entry point
 
+// dt: file > new in xcode
+
 import Cocoa
 
 @NSApplicationMain

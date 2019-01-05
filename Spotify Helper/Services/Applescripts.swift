@@ -9,6 +9,7 @@
 
 import Foundation
 
+// dt: applescripts
 struct AppleScripts {
     
     static let currentlyPlaying =

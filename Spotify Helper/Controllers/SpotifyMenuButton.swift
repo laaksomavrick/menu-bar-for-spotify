@@ -9,6 +9,7 @@
 
 import Cocoa
 
+// cr: should be postfixed with controller
 class SpotifyMenuButton {
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -20,10 +21,13 @@ class SpotifyMenuButton {
     
 }
 
+// dt: extensions idiomatic
+
 extension SpotifyMenuButton {
     
     //MARK: - view initialization related functions (data bindings / view init)
     
+    // cr: should be in a constructor
     func set() {
         self.current = Spotify.getCurrentlyPlaying()
         setButton()
@@ -32,6 +36,9 @@ extension SpotifyMenuButton {
         setSpotifyEventListener()
     }
     
+    // dt: my very naive tick method => an event happened, update everything
+    // there are better patterns for this (e.g react's render system)
+    // i've seen lots of observables in more experienced swift code
     func updateState() {
         self.current = Spotify.getCurrentlyPlaying()
         setTitle()
@@ -55,6 +62,7 @@ extension SpotifyMenuButton {
         popover.contentViewController = SpotifyPlayerViewController.freshController()
     }
     
+    // dt: mounts a callback on an event; weak self discussion (reference counting)
     func setUserInterfaceEventListener() {
         userInterfaceEventListener = UserInterfaceEventListener(mask : [.leftMouseDown, .rightMouseDown]) { [weak self] event in
             if let this = self, this.popover.isShown {
@@ -63,6 +71,7 @@ extension SpotifyMenuButton {
         }
     }
     
+    // dt: delegates
     func setSpotifyEventListener() {
         spotifyEventListener.delegate = self
     }
@@ -85,6 +94,7 @@ extension SpotifyMenuButton {
     
     //MARK: - view action related functions (controller)
 
+    // dt: objc interop/compat
     @objc func togglePopover(_ sender: Any?) {
         if popover.isShown {
             closePopover(sender: sender)
@@ -94,6 +104,7 @@ extension SpotifyMenuButton {
     }
     
     func showPopover(sender: Any?) {
+        // dt: guard let more powerful if err != nil pattern
         if let button = statusItem.button {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
             userInterfaceEventListener?.start()

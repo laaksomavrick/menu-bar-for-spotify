@@ -7,6 +7,8 @@
 //
 //  Data structure representing the player's state
 
+// cr: should be in songdata class top level; only used here
+
 import Foundation
 
 enum PlayerState: String {

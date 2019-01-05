@@ -30,6 +30,7 @@ struct SongData {
     }
     
     func getTrack() -> String? {
+        // cr: should just return self.track
         guard let track = self.track else { return nil }
         return track
     }
@@ -58,6 +59,7 @@ struct SongData {
         guard let fragment = albumUrl else { return }
         guard let url = URL(string: fragment) else { return }
         Network.getDataFromUrl(url: url) { data, response, error in
+            // dt: manual threading code for async; callbacks; async await still not in the language (but has long running proposal / is coming)
             DispatchQueue.main.async() {
                 guard let data = data, error == nil else {
                     completion(true, nil)
